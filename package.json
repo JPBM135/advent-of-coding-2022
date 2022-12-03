@@ -5,9 +5,28 @@
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build:clean": "del-cli dist",
+		"build:check": "tsc --noEmit",
+		"build:esm": "node build.js",
+		"build": "npm run build:clean && npm run build:check && npm run build:esm",
+		"lint": "prettier --check . && eslint src --ext ts",
+		"format": "prettier --write . && eslint src --ext ts --fix",
+		"fmt": "npm run format",
+		"start": "node --enable-source-maps dist/index.js",
+		"start:dev": "npm run build && npm run dev",
+		"dev": "node --enable-source-maps dist/index.js"
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"@swc/cli": "^0.1.57",
+		"@swc/core": "^1.3.21",
+		"@types/node": "^18.11.10",
+		"del-cli": "^5.0.0",
+		"eslint": "^8.29.0",
+		"eslint-config-neon": "^0.1.40",
+		"prettier": "^2.8.0",
+		"typescript": "^4.9.3"
+	}
 }
