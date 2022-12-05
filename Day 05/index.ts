@@ -26,7 +26,9 @@ const crates: string[][] = inputArray.slice(1).reduce<string[][]>((acc, cur) => 
 	return acc;
 }, []) as CratesTuple;
 
-const cratesBy9001 = JSON.parse(JSON.stringify(crates)) as CratesTuple;
+const cratesBy9001 = Array.from({ length: crates.length })
+	.fill(0)
+	.map((_, idx) => [...crates[idx]!]);
 
 interface MoveGroups {
 	amount: number;
