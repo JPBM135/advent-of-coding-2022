@@ -15,7 +15,7 @@ const shell =
 
 console.log(`Building Day ${args}...`);
 
-const output = spawnSync('swc.cmd', [`"./Day ${args}"`, '--out-dir', './dist'], {
+const output = spawnSync('swc.cmd', [`"./day-${args}"`, '--out-dir', './dist'], {
 	shell,
 	stdio: 'inherit',
 });

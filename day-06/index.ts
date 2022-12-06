@@ -17,4 +17,4 @@ function findMarker(input: string[], markerSize: number) {
 }
 
 console.log(['Part 01:', 'Found packet marker at:', findMarker(chunks, 4)].join(' '));
-console.log(['Part 01:', 'Found message marker at:', findMarker(chunks, 14)].join(' '));
+console.log(['Part 02:', 'Found message marker at:', findMarker(chunks, 14)].join(' '));
