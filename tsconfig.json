@@ -39,6 +39,7 @@
 		"outDir": "dist"
 	},
 	"include": [
-		"**/*.ts"
+		"**/*.ts",
+		"./*.ts"
 	]
 }

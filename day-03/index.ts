@@ -1,3 +1,4 @@
+import { success } from '../logger/logger.js';
 import { input } from './input.js';
 
 const priorities = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -32,7 +33,7 @@ for (const rushsack of rushsacks) {
 	}
 }
 
-console.log(['Part 01:', 'Sum of items shared between two rushsacks:', score].join(' '));
+success(3, 1, ['Sum of items shared between two rushsacks:', score].join(' '));
 
 const groups = rushsacks.reduce<string[][]>((acc, cur, idx) => {
 	const group = Math.floor(idx / 3);
@@ -60,4 +61,4 @@ for (const group of groups) {
 	badgeScore += priorities.indexOf(badge);
 }
 
-console.log(['Part 02:', 'Sum of badges shared between groups of 3:', badgeScore].join(' '));
+success(3, 2, ['Sum of badges shared between groups of 3:', badgeScore].join(' '));
