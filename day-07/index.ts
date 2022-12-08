@@ -1,4 +1,4 @@
-import { /* debug, */ success } from '../logger/logger.js';
+import { /* debug, */ success } from '../util/logger.js';
 import { input } from './input.js';
 
 const stdout = input.split('\n').slice(1);

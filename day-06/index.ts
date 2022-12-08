@@ -1,4 +1,4 @@
-import { success } from '../logger/logger.js';
+import { success } from '../util/logger.js';
 import { input } from './input.js';
 
 const chunks = input.split('');

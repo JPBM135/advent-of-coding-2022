@@ -1,39 +1,49 @@
+import { debug, success } from '../util/logger.js';
 import { input } from './input.js';
 
 const inputArray = input.split('\n');
-console.log(inputArray);
+// debug('Input', inputArray);
 
 const finalArray = [];
 let tempArray = [];
 
 for (const item of inputArray) {
 	if (!item.length) {
-		// console.log(tempArray, finalArray);
+		// debug(tempArray, finalArray);
 		finalArray.push(tempArray);
-		// console.log(finalArray);
+		// debug(finalArray);
 		tempArray = [];
 		continue;
 	}
 
-	// console.log(item);
+	// debug(item);
 
 	tempArray.push(Number(item));
-	console.log(finalArray.length);
+	// debug('Final length', finalArray.length);
 }
 
-console.log(finalArray);
+// debug('Final array 1', finalArray);
 
 if (tempArray.length) {
 	finalArray.push(tempArray);
-	console.log(finalArray);
+	// debug('Final array 2', finalArray);
 }
 
-console.log(finalArray);
+// debug('Final array 3', finalArray);
 
 const reducedArray = finalArray.map((array) => array.reduce((acc, cur) => acc + Number(cur), 0));
 const sortedArray = reducedArray.sort((a, b) => b - a);
 
-console.log([
+/* debug([
 	'The 10 elfs with the most calories:',
 	...sortedArray.map((val, idx) => `${idx + 1}° Elf - ${val}`).slice(0, 10),
-]);
+]); */
+
+success(1, 1, `The elf with the most calories has: ${sortedArray[0]}`);
+success(
+	1,
+	2,
+	`The top 3 elfs with the most calories has: ${sortedArray.slice(0, 3).join(' + ')} = ${sortedArray
+		.slice(0, 3)
+		.reduce((acc, cur) => acc + cur, 0)}`,
+);

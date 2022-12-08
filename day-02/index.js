@@ -1,3 +1,4 @@
+import { success } from '../util/logger.js';
 import { input } from './input.js';
 
 const rounds = input.split('\n').map((round) => round.split(' '));
@@ -56,7 +57,7 @@ for (const [enemy, player] of rounds) {
 	}
 }
 
-console.log(['Result of the game', `You: ${scores.player}`, `enemy: ${scores.enemy}`].join('\n'));
+success(2, 1, [`You: ${scores.player}`, `enemy: ${scores.enemy}`].join(' '));
 
 // Part 2
 
@@ -98,4 +99,4 @@ for (const [enemy, player] of rounds) {
 	}
 }
 
-console.log(['Result of Part 2', `You: ${scores.player}`, `enemy: ${scores.enemy}`].join('\n'));
+success(2, 2, [`You: ${scores.player}`, `enemy: ${scores.enemy}`].join(' '));

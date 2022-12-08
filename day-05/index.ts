@@ -1,4 +1,4 @@
-import { success } from '../logger/logger.js';
+import { success } from '../util/logger.js';
 import { input } from './input.js';
 
 const inputArray = input.split('\n');
@@ -60,4 +60,4 @@ for (const { amount, end, start } of moves) {
 	// console.log(cratesBy9001.at(end - 1));
 }
 
-console.log(5, 2, ['Last crates moved by 9001:', cratesBy9001.map((create) => create.at(-1)).join('')].join(' '));
+success(5, 2, ['Last crates moved by 9001:', cratesBy9001.map((create) => create.at(-1)).join('')].join(' '));

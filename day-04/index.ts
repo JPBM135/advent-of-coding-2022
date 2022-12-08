@@ -1,3 +1,4 @@
+import { success } from '../util/logger.js';
 import { input } from './input.js';
 
 const inputArray = input.split('\n').map((line) => line.split(','));
@@ -28,7 +29,7 @@ for (const [range1, range2] of inputArray as [[string, string]]) {
 	}
 }
 
-console.log(['Part 01:', 'Fully contained intervals:', fullyContainedRanges].join(' '));
+success(4, 1, ['Fully contained intervals:', fullyContainedRanges].join(' '));
 
 function rangeToNumber(range: string): number[] {
 	const [start, end] = range
@@ -50,4 +51,4 @@ for (const ranges of inputArray as [[string, string]]) {
 	if (numbers.length !== new Set(numbers).size) intersectRanges++;
 }
 
-console.log(['Part 02:', 'Ranges that intersect:', intersectRanges].join(' '));
+success(4, 2, ['Ranges that intersect:', intersectRanges].join(' '));
