@@ -29,3 +29,25 @@ To run all days, run the following command:
 ```bash
 npm run all
 ```
+
+## Nerd stuff:
+
+### Tech stack:
+
+- [`Eslint`](https://eslint.org/) for linting (extends the [neon config](https://github.com/iCrawl/eslint-config-neon))
+- [`Prettier`](https://prettier.io/) for code formatting
+- [`TypeScript`](https://www.typescriptlang.org/) for type safety and better code
+- [`Swc`](https://swc.rs/) for compiling TypeScript to JavaScript (faster than tsc)
+
+### The [Build Script](./util/build.js):
+
+The build script allows you to run the code for a specific day. It does the following:
+
+- Checks if the day is valid
+- Builds the TypeScript code for the day
+- Runs the JavaScript code for the day providing timing information
+
+It also has a `--all` flag which allows you to run all days (accessible through the `npm run all` command).
+
+- It builds all TypeScript code for all days
+- Runs all JavaScript code for all days!
