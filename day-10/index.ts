@@ -1,4 +1,4 @@
-import { debug, success } from '../util/logger.js';
+import { /* debug, */ success } from '../util/logger.js';
 import { input } from './input.js';
 
 const commands = input.split('\n').map((line) => line.split(' ')) as [string, string?][];
@@ -11,7 +11,7 @@ const screen: string[][] = [[], [], [], [], [], []];
 
 function checkCycles() {
 	if ((cycles - 20) % 40 === 0) {
-		debug('SPECIAL ABOVE');
+		// debug('SPECIAL ABOVE');
 		sums.push(cycles * xRegister);
 	}
 }
